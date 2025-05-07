@@ -36,16 +36,11 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased m-7`}
         >
           <header className="flex justify-end">
-            <UserButton />
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </header>
-
-          <SignedOut>
-            <div className="flex justify-center items-center h-screen">
-              <SignIn />
-            </div>
-          </SignedOut>
-
-          <SignedIn>{children}</SignedIn>
+          {children}
         </body>
       </html>
     </ClerkProvider>
