@@ -1,13 +1,15 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { getAuth } from '@clerk/nextjs/server';
 import { linkStore } from '../../lib/linkStore';
-import { LinkCard } from '../../validators/linkValidation';
+import LinkValidator, { LinkCard } from '../../validators/linkValidation';
 
 export async function GET(req: NextRequest) {
   const { userId } = getAuth(req);
+
   if (!userId) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
+
   const links = linkStore.getLinks(userId);
   return NextResponse.json(links);
 }
@@ -20,6 +22,14 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json();
+  const parseResult = LinkValidator.safeParse(body);
+
+  if (!parseResult.success) {
+    return NextResponse.json(
+      { error: 'Invalid link', details: parseResult.error.errors },
+      { status: 400 }
+    );
+  }
 
   try {
     const id = linkStore.addLink(userId, body as LinkCard);
@@ -37,6 +47,14 @@ export async function PUT(req: NextRequest) {
   }
 
   const body = await req.json();
+  const parseResult = LinkValidator.safeParse(body);
+
+  if (!parseResult.success) {
+    return NextResponse.json(
+      { error: 'Invalid link', details: parseResult.error.errors },
+      { status: 400 }
+    );
+  }
 
   try {
     const id = linkStore.updateLink(userId, body as LinkCard);

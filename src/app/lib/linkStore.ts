@@ -11,24 +11,19 @@ class LinkStore {
   }
 
   addLink(userId: string, link: LinkCard): string {
-    const parsed = LinkValidator.parse(link);
     if (!this.data[userId]) {
       this.data[userId] = {};
     }
-    this.data[userId][link.id] = parsed;
+    this.data[userId][link.id] = link;
     return link.id;
   }
 
   /** It should receive the whole link (PUT) behavior */
   updateLink(userId: string, link: LinkCard): string {
-    const parsed = LinkValidator.parse(link);
-
     if (!this.data[userId] || !this.data[userId][link.id]) {
       return '';
     }
-
-    this.data[userId][link.id] = parsed;
-
+    this.data[userId][link.id] = link;
     return link.id;
   }
 
@@ -36,9 +31,7 @@ class LinkStore {
     if (!this.data[userId] || !this.data[userId][linkId]) {
       return '';
     }
-
     delete this.data[userId][linkId];
-
     return linkId;
   }
 }
