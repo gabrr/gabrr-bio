@@ -1,6 +1,6 @@
-import { ActivityLogIcon, MagicWandIcon } from "@radix-ui/react-icons";
-import { HomeIcon, Link2Icon } from "@radix-ui/react-icons";
-import Link from "next/link";
+import { ActivityLogIcon, MagicWandIcon } from '@radix-ui/react-icons';
+import { HomeIcon, Link2Icon } from '@radix-ui/react-icons';
+import Link from 'next/link';
 
 export function Menu() {
   return (
