@@ -1,6 +1,6 @@
-import { ActivityLogIcon, MagicWandIcon } from '@radix-ui/react-icons';
-import { HomeIcon, Link2Icon } from '@radix-ui/react-icons';
+import { DashboardIcon, Link2Icon, RocketIcon, RulerSquareIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
+import { Text } from '@radix-ui/themes';
 
 export function Menu() {
   return (
@@ -9,29 +9,37 @@ export function Menu() {
         href="/admin"
         className="flex flex-col items-center text-neutral-700 hover:text-black transition-colors"
       >
-        <HomeIcon width={24} height={24} />
-        <span className="text-xs mt-1">Home</span>
+        <DashboardIcon width={24} height={24} />
+        <Text as="span" size="1" mt="2" weight="bold">
+          Dashboard
+        </Text>
       </Link>
       <Link
         href="/admin/links"
         className="flex flex-col items-center text-neutral-700 hover:text-black transition-colors"
       >
         <Link2Icon width={24} height={24} />
-        <span className="text-xs mt-1">Links</span>
+        <Text as="span" size="1" mt="2" weight="bold">
+          Links
+        </Text>
       </Link>
       <Link
         href="/admin/themes"
         className="flex flex-col items-center text-neutral-700 hover:text-black transition-colors"
       >
-        <MagicWandIcon width={24} height={24} />
-        <span className="text-xs mt-1">Theme</span>
+        <RulerSquareIcon width={24} height={24} />
+        <Text as="span" size="1" mt="2" weight="bold">
+          Theme
+        </Text>
       </Link>
       <Link
         href="/admin/experiments"
         className="flex flex-col items-center text-neutral-700 hover:text-black transition-colors"
       >
-        <ActivityLogIcon width={24} height={24} />
-        <span className="text-xs mt-1">Experiments</span>
+        <RocketIcon width={24} height={24} />
+        <Text as="span" size="1" mt="2" weight="bold">
+          Experiments
+        </Text>
       </Link>
     </footer>
   );

@@ -25,3 +25,16 @@ export interface ABExperiment {
     B: ABStats;
   };
 }
+
+export interface ABStatsUI {
+  winner: boolean;
+  views: number;
+  clickRate: number;
+}
+
+export interface ABExperimentUI {
+  active: boolean;
+  runningFor: string;
+  versionA: ABStatsUI;
+  versionB: ABStatsUI;
+}
