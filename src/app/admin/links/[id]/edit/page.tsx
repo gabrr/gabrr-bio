@@ -1,6 +1,6 @@
 import { ILinkCard } from '@/app/models/linksModel';
 import LinkCardForm from '@/components/organisms/LinkCardForm';
-import { LinkCard } from '@/components/molecules/LinkCard';
+import { LinkCardComponent } from '@/components/molecules/LinkCardComponent';
 import { Flex, Text } from '@radix-ui/themes';
 
 const mockVariant: ILinkCard = {
@@ -19,7 +19,7 @@ export default async function EditLink() {
     <Flex direction={'column'} gap={'6'}>
       <Flex gap={'2'} direction={'column'}>
         <Text as="p">Preview</Text>
-        <LinkCard linkCard={mockVariant} />
+        <LinkCardComponent linkCard={mockVariant} />
       </Flex>
 
       <LinkCardForm variant={mockVariant} />

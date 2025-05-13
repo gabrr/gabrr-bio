@@ -3,7 +3,7 @@
 import { ABExperiment, ABExperimentUI } from '@/app/models/experimentsModel';
 import ABCard from '@/components/molecules/ABCard';
 import LinkCardForm from '@/components/molecules/ABVariantCard';
-import { LinkCard } from '@/components/molecules/LinkCard';
+import { LinkCardComponent } from '@/components/molecules/LinkCardComponent';
 import * as Tabs from '@radix-ui/react-tabs';
 import { Box, Button, Callout, Flex, Link, Switch, Text } from '@radix-ui/themes';
 import { useState } from 'react';
@@ -102,8 +102,8 @@ export default function ExperimentsPage() {
         </Text>
 
         <Flex gap="2">
-          <LinkCard linkCard={abTestData.variants.A.link} />
-          <LinkCard linkCard={abTestData.variants.B.link} />
+          <LinkCardComponent linkCard={abTestData.variants.A.link} />
+          <LinkCardComponent linkCard={abTestData.variants.B.link} />
         </Flex>
       </Flex>
 

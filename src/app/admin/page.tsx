@@ -1,7 +1,7 @@
 'use client';
 
 import { Icon } from '@/components/atoms/Icon';
-import { LinkCard } from '@/components/molecules/LinkCard';
+import { LinkCardComponent } from '@/components/molecules/LinkCardComponent';
 import { linkCards } from '@/mock/links';
 import { useUser } from '@clerk/nextjs';
 import { Flex, Text } from '@radix-ui/themes';
@@ -36,7 +36,7 @@ export default function Page() {
 
       <Flex gap={'2'} direction={'column'}>
         {linkCards.map((linkCard) => (
-          <LinkCard key={linkCard.id} linkCard={linkCard} />
+          <LinkCardComponent key={linkCard.id} linkCard={linkCard} />
         ))}
       </Flex>
     </>
