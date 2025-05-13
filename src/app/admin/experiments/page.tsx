@@ -3,7 +3,6 @@
 import { ABExperiment, ABExperimentUI } from '@/app/models/experimentsModel';
 import ABCard from '@/components/molecules/ABCard';
 import LinkCardForm from '@/components/molecules/ABVariantCard';
-import ABVariantCard from '@/components/molecules/ABVariantCard';
 import { LinkCard } from '@/components/molecules/LinkCard';
 import * as Tabs from '@radix-ui/react-tabs';
 import { Box, Button, Callout, Flex, Link, Switch, Text } from '@radix-ui/themes';
@@ -27,6 +26,7 @@ const abTestData: ABExperiment = {
         buttonText: 'Get Started',
         buttonColor: 'blue',
         backgroundColor: 'linear-gradient(135deg, #4F46E5, #7C3AED)',
+        typography: 'Poppins',
       },
     },
     B: {
@@ -39,6 +39,7 @@ const abTestData: ABExperiment = {
         buttonText: 'Join Now',
         buttonColor: 'purple',
         backgroundColor: 'linear-gradient(135deg, #7C3AED, #EC4899)',
+        typography: 'Poppins',
       },
     },
   },
@@ -77,13 +78,13 @@ export default function ExperimentsPage() {
   const [fontB, setFontB] = useState('Poppins');
 
   return (
-    <Box minWidth={'380px'} maxWidth={'500px'} mx="auto">
+    <Box mx="auto">
       <Text size="4" weight="medium" mb={'3'}>
         A/B Test
       </Text>
 
       <Flex align="center" gap="3" mb="6" mt={'2'}>
-        <Switch checked={UIData.active} />
+        <Switch defaultChecked={UIData.active} />
         <Text weight="medium">Active</Text>
         <Text color="gray" size="2">
           Running for {UIData.runningFor}

@@ -8,6 +8,7 @@ const LinkCardSchema = z.object({
   url: z.string().url().nonempty(),
   backgroundColor: z.string().nonempty(),
   buttonColor: z.string().nonempty(),
+  typography: z.string().nonempty(),
 });
 
 export type LinkCard = z.infer<typeof LinkCardSchema>;

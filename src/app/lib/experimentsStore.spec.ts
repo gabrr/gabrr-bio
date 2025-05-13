@@ -20,6 +20,7 @@ describe('ExperimentStore', () => {
           url: 'https://a.com',
           backgroundColor: '#fff',
           buttonColor: 'blue',
+          typography: 'Poppins',
         },
       },
       B: {
@@ -32,6 +33,7 @@ describe('ExperimentStore', () => {
           url: 'https://b.com',
           backgroundColor: '#eee',
           buttonColor: 'red',
+          typography: 'Poppins',
         },
       },
     },

@@ -1,24 +1,26 @@
-import { LinkCard } from '@/app/validators/linkValidation';
+import { ILinkCard } from '@/app/models/linksModel';
 import { linkStore } from './linkStore';
 
 describe('LinkStore', () => {
   const userId = 'user1';
-  const link1: LinkCard = {
+  const link1: ILinkCard = {
     id: '1',
     url: 'https://a.com',
     title: 'A',
     subtitle: 'SubA',
     buttonText: 'Go',
     backgroundColor: '#fff',
+    typography: 'Poppins',
     buttonColor: 'blue',
   };
-  const link2: LinkCard = {
+  const link2: ILinkCard = {
     id: '2',
     url: 'https://b.com',
     title: 'B',
     subtitle: 'SubB',
     buttonText: 'Go',
     backgroundColor: '#eee',
+    typography: 'Poppins',
     buttonColor: 'red',
   };
 

@@ -9,7 +9,10 @@ export function LinkCard({ linkCard }: { linkCard: ILinkCard }) {
       <h1 className="text-xl font-bold mb-2 text-white">{linkCard.title}</h1>
       <p className=" mb-4 text-white">{linkCard.subtitle}</p>
 
-      <Button color={linkCard.buttonColor} onClick={() => window.open(linkCard.url, '_blank')}>
+      <Button
+        style={{ backgroundColor: linkCard.buttonColor }}
+        onClick={() => window.open(linkCard.url, '_blank')}
+      >
         {linkCard.buttonText}
       </Button>
     </div>

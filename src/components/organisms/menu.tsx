@@ -11,7 +11,7 @@ import { Text } from '@radix-ui/themes';
 export function Menu() {
   return (
     <footer
-      className="fixed bottom-2 bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-200 w-[95%] left-1/2 -translate-x-1/2 px-2 flex overflow-x-auto gap-3 justify-evenly py-3 z-50"
+      className="max-w-2xl fixed bottom-2 bg-white/50 backdrop-blur-md rounded-2xl border border-gray-200 w-[95%] left-1/2 -translate-x-1/2 flex overflow-x-auto gap-3 justify-between py-3 px-3 z-50"
       style={{ WebkitOverflowScrolling: 'touch' }}
     >
       <Link

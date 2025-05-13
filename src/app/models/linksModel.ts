@@ -1,5 +1,3 @@
-import { accentColors } from '@radix-ui/themes/props';
-
 export interface ILinkCard {
   id: string; // Unique card ID
   title: string; // Main heading text
@@ -7,5 +5,6 @@ export interface ILinkCard {
   buttonText: string; // CTA button label
   url: string; // URL the button links to
   backgroundColor: string; // Hex or gradient string
-  buttonColor: (typeof accentColors)[number];
+  buttonColor: string; // Hex or gradient string
+  typography: string;
 }

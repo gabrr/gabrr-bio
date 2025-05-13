@@ -11,6 +11,7 @@ const mockVariant: ILinkCard = {
   buttonText: 'Edit Now',
   buttonColor: 'blue',
   backgroundColor: 'linear-gradient(135deg, #4F46E5, #7C3AED)',
+  typography: 'Poppins',
 };
 
 export default async function EditLink() {
