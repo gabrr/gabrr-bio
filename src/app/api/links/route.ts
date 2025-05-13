@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { getAuth } from '@clerk/nextjs/server';
-import { linkStore } from '../../lib/linkStore';
 import LinkValidator, { LinkCard } from '../../validators/linkValidation';
+import { linkStore } from '@/app/lib/link/linkStore';
 
 export async function GET(req: NextRequest) {
   const { userId } = getAuth(req);

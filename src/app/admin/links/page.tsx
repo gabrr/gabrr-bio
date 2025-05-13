@@ -1,19 +1,29 @@
-'use client';
-
+import { getLinksServerAction } from '@/app/lib/link/linkActions';
+import { ILinkCard } from '@/app/models/linksModel';
+import { ClientButton } from '@/components/atoms/ClientButton';
 import { LinkListItem } from '@/components/molecules/LinkListItem';
-import { linkCards } from '@/mock/links';
-import { Button } from '@radix-ui/themes';
+import { isEmpty } from 'lodash';
 import Link from 'next/link';
+import EmptyLinks from './empty';
+import { PlusCircledIcon } from '@radix-ui/react-icons';
 
-export default function LinksPage() {
+export default async function LinksPage() {
+  const links = await getLinksServerAction();
+
   return (
-    <div className="flex flex-col gap-4 pageIn" data-index={linkCards.length}>
-      {linkCards.map((linkCard) => (
-        <LinkListItem key={linkCard.id} linkCard={linkCard} />
-      ))}
+    <div className="flex flex-col gap-4 pageIn" data-index={links}>
+      {isEmpty(links) ? (
+        <EmptyLinks />
+      ) : (
+        Object.values(links).map((link) => (
+          <LinkListItem key={link.id} linkCard={link as ILinkCard} />
+        ))
+      )}
 
-      <Link href={'/admin/links/create'}>
-        <Button size={'3'}>New Card Link</Button>
+      <Link href={'/admin/links/create'} className="w-max mx-auto">
+        <ClientButton size={'3'}>
+          Add Link <PlusCircledIcon />{' '}
+        </ClientButton>
       </Link>
     </div>
   );

@@ -1,4 +1,4 @@
-import { LinkCard } from '../validators/linkValidation';
+import { LinkCard } from '@/app/validators/linkValidation';
 import { linkStore } from './linkStore';
 
 describe('LinkStore', () => {

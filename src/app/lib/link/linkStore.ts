@@ -1,6 +1,6 @@
-import LinkValidator, { LinkCard } from '../validators/linkValidation';
+import { LinkCard } from '@/app/validators/linkValidation';
 
-type LinkList = Record<string, LinkCard>;
+export type LinkList = Record<string, LinkCard>;
 type LinkStoreData = Record<string, LinkList>;
 
 class LinkStore {
@@ -14,7 +14,9 @@ class LinkStore {
     if (!this.data[userId]) {
       this.data[userId] = {};
     }
+
     this.data[userId][link.id] = link;
+
     return link.id;
   }
 
@@ -23,7 +25,9 @@ class LinkStore {
     if (!this.data[userId] || !this.data[userId][link.id]) {
       return '';
     }
+
     this.data[userId][link.id] = link;
+
     return link.id;
   }
 
@@ -31,7 +35,9 @@ class LinkStore {
     if (!this.data[userId] || !this.data[userId][linkId]) {
       return '';
     }
+
     delete this.data[userId][linkId];
+
     return linkId;
   }
 }

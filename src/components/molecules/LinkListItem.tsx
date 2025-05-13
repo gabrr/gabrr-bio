@@ -1,3 +1,5 @@
+'use client';
+
 import { ILinkCard } from '@/app/models/linksModel';
 import { Pencil1Icon, TrashIcon } from '@radix-ui/react-icons';
 import { Card, Flex, IconButton, Text } from '@radix-ui/themes';
