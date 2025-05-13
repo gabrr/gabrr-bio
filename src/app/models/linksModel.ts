@@ -1,6 +1,6 @@
 import { accentColors } from '@radix-ui/themes/props';
 
-export interface LinkCard {
+export interface ILinkCard {
   id: string; // Unique card ID
   title: string; // Main heading text
   subtitle: string; // Supporting description

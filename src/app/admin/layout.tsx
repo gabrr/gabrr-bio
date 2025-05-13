@@ -1,10 +1,10 @@
-import { Menu } from '@/components/molecules/menu';
+import { Menu } from '@/components/organisms/menu';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="px-7 pb-24">
+    <main className="px-4 pb-24">
       {children}
       <Menu />
-    </div>
+    </main>
   );
 }

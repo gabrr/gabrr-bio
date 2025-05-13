@@ -1,8 +1,8 @@
-import { LinkCard } from './linksModel';
+import { ILinkCard } from './linksModel';
 
 export interface ABVariant {
   id: string;
-  link: LinkCard;
+  link: ILinkCard;
 }
 
 export interface ABStats {

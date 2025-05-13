@@ -34,7 +34,7 @@ interface IconProps {
   size?: number;
 }
 
-export function Icon({ name, variant, alt, size = 28 }: IconProps) {
+export function Icon({ name, variant, alt, size = 24 }: IconProps) {
   const src = iconsMap[name]?.[variant];
   if (!src) return null;
   return (

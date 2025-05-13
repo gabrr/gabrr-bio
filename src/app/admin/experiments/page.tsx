@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
 import { ABExperiment, ABExperimentUI } from '@/app/models/experimentsModel';
 import ABCard from '@/components/molecules/ABCard';
-import { LinkCard } from '@/components/molecules/linkCard';
-import { Box, Button, Callout, Flex, Link, Switch, Text, TextField } from '@radix-ui/themes';
+import LinkCardForm from '@/components/molecules/ABVariantCard';
+import ABVariantCard from '@/components/molecules/ABVariantCard';
+import { LinkCard } from '@/components/molecules/LinkCard';
 import * as Tabs from '@radix-ui/react-tabs';
-import { ColorDropdown } from '@/components/molecules/ColorDropdown';
-import { TypographyDropdown } from '@/components/molecules/TypographyDropdown';
+import { Box, Button, Callout, Flex, Link, Switch, Text } from '@radix-ui/themes';
+import { useState } from 'react';
 
 // Demo data
 const abTestData: ABExperiment = {
@@ -135,58 +135,11 @@ export default function ExperimentsPage() {
         </Tabs.List>
 
         <Tabs.Content value="A">
-          <Box>
-            <Text weight="medium" mb="1">
-              Title
-            </Text>
-            <TextField.Root value="Join Our Community" readOnly mb="4" />
-
-            <Text weight="medium" mb="1">
-              Description
-            </Text>
-            <TextField.Root value="Connect with like-minded creators and gr..." readOnly mb="4" />
-
-            <Text weight="medium" mb="1">
-              Button Text
-            </Text>
-            <TextField.Root value="Get Started" readOnly mb="4" />
-
-            <Text weight="medium" mb="1">
-              Style
-            </Text>
-            <Flex gap="2" mb="4">
-              <ColorDropdown value={colorA} onValueChange={setColorA} />
-              <TypographyDropdown value={fontA} onValueChange={setFontA} />
-            </Flex>
-          </Box>
+          <LinkCardForm variant={abTestData.variants.A.link} />
         </Tabs.Content>
 
         <Tabs.Content value="B">
-          <Box>
-            <Text weight="medium" mb="1">
-              Title
-            </Text>
-            <TextField.Root value="Become a Member" readOnly mb="4" />
-            <Text weight="medium" mb="1">
-              Description
-            </Text>
-            <TextField.Root
-              value="Access exclusive resources and connect with creators"
-              readOnly
-              mb="4"
-            />
-            <Text weight="medium" mb="1">
-              Button Text
-            </Text>
-            <TextField.Root value="Join Now" readOnly mb="4" />
-            <Text weight="medium" mb="1">
-              Style
-            </Text>
-            <Flex gap="2" mb="4">
-              <ColorDropdown value={colorB} onValueChange={setColorB} />
-              <TypographyDropdown value={fontB} onValueChange={setFontB} />
-            </Flex>
-          </Box>
+          <LinkCardForm variant={abTestData.variants.B.link} />
         </Tabs.Content>
       </Tabs.Root>
 
